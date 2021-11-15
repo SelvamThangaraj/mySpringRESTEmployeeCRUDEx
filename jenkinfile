@@ -4,19 +4,19 @@ pipeline {
         stage('clone-repo') { 
             steps {
                 bat "git clone https://github.com/SelvamThangaraj/mySpringRESTEmployeeCRUDEx.git"
-                bat "mvn clean -f my-app"
+                bat "mvn clean -f mySpringRESTEmployeeCRUDEx"
                 //bat 'start cmd.exe /c date'
             }
         }
         stage('Test') { 
             steps {
-                bat "mvn test -f my-app" 
+                bat "mvn test -f mySpringRESTEmployeeCRUDEx" 
              // bat 'start cmd.exe /c time'
             }
         }
         stage('Deploy') { 
             steps {
-              bat "mvn package -f my-app" 
+              bat "mvn package -f mySpringRESTEmployeeCRUDEx" 
              // bat 'start cmd.exe /c dir'
             }
         }
