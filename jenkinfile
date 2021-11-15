@@ -20,5 +20,12 @@ pipeline {
              // bat 'start cmd.exe /c dir'
             }
         }
+        stage('TomcatDeploy') { 
+            steps {
+              bat "mvn install tomcat8:deploy" 
+             // bat 'start cmd.exe /c dir'
+            }
+        }
+        
     }
 }
