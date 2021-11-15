@@ -22,7 +22,7 @@ pipeline {
         }
         stage('TomcatDeploy') { 
             steps {
-              bat "mvn install tomcat8:deploy" 
+              bat "deploy adapters: [tomcat8(credentialsId: '0fb2b8b5-a96a-41c1-95db-a56ff3db7ae5', path: '', url: 'http://localhost:8080')], contextPath: 'mySpringRESTEmployeeCRUDEx-0.0.1-SNAPSHOT', war: '**/*.war'" 
              // bat 'start cmd.exe /c dir'
             }
         }
